@@ -13,7 +13,7 @@ DeleteStudent($conn, $id);
 
 <html>
 <title>Test Zone!</title>
-<link rel="stylesheet" href="test.css">
+<link rel="stylesheet" href="style.css">
 
 <body>
     <?php
