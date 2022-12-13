@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <html>
 <title>Test Zone!</title>
-<link rel="stylesheet" href="test.css">
+<link rel="stylesheet" href="style.css">
 
 <body>
     <?php if ($_SERVER['REQUEST_METHOD'] === 'POST') : ?>
