@@ -1,13 +1,16 @@
 <?php
 
-function GetAllStudents($conn, $start, $end)
+function GetStudentCount($conn)
 {
-    #$total = $conn->prepare("SELECT COUNT(*) FROM students");
-    #$total->execute();
-    #$total = $total->fetchColumn();
-    $limit = 10;
-    $page = 1;
-    $offset =  ($page - 1) * $limit;
+    $stmt = $conn->prepare("SELECT COUNT(*) FROM students");
+    $stmt->execute();
+    $count = $stmt->fetchColumn();
+    return $count;
+}
+
+
+function GetAllStudents($conn, $limit, $offset)
+{
 
     $stmt = $conn->prepare("SELECT * FROM `students` ORDER BY `id` LIMIT :limit OFFSET :offset");
     $stmt->bindParam(':limit', $limit, PDO::PARAM_INT);
